@@ -13,6 +13,9 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 
+	<!-- Fonts Google -->
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
 </head>
 <body>
 
@@ -44,66 +47,82 @@
 		<div class="jumbotron" id="area-menu">
 
 			<!-- Button Casa/Home -->
-			<div class="jumbotron" id="area-button">
-				<div class="button-painel">
-					<img src="icon/home.png" title="Home">
+			<a href="#">
+				<div class="jumbotron" id="area-button">
+					<div class="button-painel">
+						<img src="icon/home.png" title="Home">
+					</div>
 				</div>
-			</div>
+			</a>
 
 			<!-- Button Wifi -->
-			<div class="jumbotron" id="area-button">
-				<div class="button-painel">
-					<img src="icon/wifi.png" title="Wifi">
+			<a href="#">
+				<div class="jumbotron" id="area-button">
+					<div class="button-painel">
+						<img src="icon/wifi.png" title="Wifi">
+					</div>
 				</div>
-			</div>
+			</a>
 
 			<!-- Button Lâmpada/Energia -->
-			<div class="jumbotron" id="area-button">
-				<div class="button-painel">
-					<img src="icon/idea.png" title="Lâmpada">
+			<a href="#">
+				<div class="jumbotron" id="area-button">
+					<div class="button-painel">
+						<img src="icon/idea.png" title="Lâmpada">
+					</div>
 				</div>
-			</div>
+			</a>
 
 			<!-- Button GPS/Localização -->
-			<div class="jumbotron" id="area-button">
-				<div class="button-painel">
-					<img src="icon/placeholder.png" title="GPS">
+			<a href="#">
+				<div class="jumbotron" id="area-button">
+					<div class="button-painel">
+						<img src="icon/placeholder.png" title="GPS">
+					</div>
 				</div>
-			</div>
+			</a>
 
 			<!-- Button Reprodutor de Música -->
-			<div class="jumbotron" id="area-button">
-				<div class="button-painel">
-					<img src="icon/music-player.png" title="Reprodutor de Música">
+			<a href="#">
+				<div class="jumbotron" id="area-button">
+					<div class="button-painel">
+						<img src="icon/music-player.png" title="Reprodutor de Música">
+					</div>
 				</div>
-			</div>
+			</a>
 
 			<!-- Button Reprodutor de Vídeo -->
-			<div class="jumbotron" id="area-button">
-				<div class="button-painel">
-					<img src="icon/video-player.png" title="Reprodutor de Vídeo">
+			<a href="#">
+				<div class="jumbotron" id="area-button">
+					<div class="button-painel">
+						<img src="icon/video-player.png" title="Reprodutor de Vídeo">
+					</div>
 				</div>
-			</div>
+			</a>
 
 			<!-- Button Microphone -->
-			<div class="jumbotron" id="area-button">
-				<div class="button-painel">
-					<img src="icon/microphone.png" title="Assistente Virtual">
+			<a href="#">
+				<div class="jumbotron" id="area-button">
+					<div class="button-painel">
+						<img src="icon/microphone.png" title="Assistente Virtual">
+					</div>
 				</div>
-			</div>
+			</a>
 
 			<!-- Button Configuração -->
-			<div class="jumbotron" id="area-button">
-				<div class="button-painel">
-					<img src="icon/settings.png" title="Configuração">
+			<a href="#">
+				<div class="jumbotron" id="area-button">
+					<div class="button-painel">
+						<img src="icon/settings.png" title="Configuração">
+					</div>
 				</div>
-			</div>
+			</a>
 
 		</div>
 
 	</div>
 
-	<footer class="footer" id="footer-rodape">
+	<footer class="footer navbar navbar-default" id="footer-rodape">
 	    <div class="container">
 	    	<p class="text-muted">2018 Company, Inc.</p>
 	    </div>
