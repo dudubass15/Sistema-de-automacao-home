@@ -25,7 +25,6 @@ body{
 	-o-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	transform: scale(1.1);
-	background-color: #f71616;
 	border: 0.1px solid black;
 }
 

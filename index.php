@@ -124,7 +124,7 @@
 
 	<footer class="footer navbar navbar-default" id="footer-rodape">
 	    <div class="container">
-	    	<p class="text-muted">2018 Company, Inc.</p>
+	    	<p class="text-muted">2018 Automação Home, Inc.</p>
 	    </div>
 	</footer>
 
