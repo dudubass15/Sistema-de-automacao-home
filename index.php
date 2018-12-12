@@ -43,7 +43,10 @@
 
 	    <div id="navbar" class="navbar-collapse collapse">
 	    	<ul class="nav navbar-nav navbar-right">
-            	<li><button type="button" class="btn btn-default">Sair</button></li>
+            	<li>
+            		<button type="button" class="btn btn-default">Sair
+            		<span class="glyphicon glyphicon-log-in"></span></button>
+        		</li>
         	</ul>
 	   	</div>
 
@@ -65,7 +68,7 @@
 		<div class="jumbotron" id="area-menu">
 
 			<!-- Button Casa/Home -->
-			<a href="#">
+			<a href="index.php">
 				<div class="jumbotron" id="area-button">
 					<div class="button-painel">
 						<img src="icon/home.png" title="Home">
@@ -74,7 +77,7 @@
 			</a>
 
 			<!-- Button Wifi -->
-			<a href="#">
+			<a href="#" class="active">
 				<div class="jumbotron" id="area-button">
 					<div class="button-painel">
 						<img src="icon/wifi.png" title="Wifi">
