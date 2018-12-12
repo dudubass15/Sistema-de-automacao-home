@@ -8,6 +8,14 @@
 	<!-- CSS padrão/default -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/modal.css">
+	<link rel="stylesheet" type="text/css" href="css/material-switch.css">
+
+	<!-- CSS Aplicado para a configuração da aplicação --->
+	<link rel="stylesheet" type="text/css" href="css/config.app.css">
+
+	<!-- Animação de carregamento das páginas -->
+	<link rel="stylesheet" type="text/css" href="css/loadpage.css">
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -43,6 +51,16 @@
 	</nav>
 
 	<div class="container">
+
+		<div id="preloader">
+			<div id="status">
+				<div class="sk-three-bounce">
+				  <div class="sk-child sk-bounce1"></div>
+				  <div class="sk-child sk-bounce2"></div>
+				  <div class="sk-child sk-bounce3"></div>
+				</div>
+			</div>
+		</div>
 
 		<div class="jumbotron" id="area-menu">
 
@@ -111,12 +129,73 @@
 
 			<!-- Button Configuração -->
 			<a href="#">
-				<div class="jumbotron" id="area-button">
+				<div class="jumbotron" id="area-button" data-toggle="modal" data-target=".bs-example-modal-sm">
 					<div class="button-painel">
 						<img src="icon/settings.png" title="Configuração">
 					</div>
 				</div>
 			</a>
+
+			<!-- Modal -->
+			<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+			  <div class="modal-dialog modal-sm" role="document">
+			    <div class="modal-content" id="modal-content-corpo">
+			    	<div class="modal-header">
+			    		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+				  		<h3>Configuração</h3>
+
+				  		<li class="list-group-item" id="config-button">
+	                        Módulo Wifi
+	                        <div class="material-switch pull-right">
+	                            <input id="someSwitchOptionDanger1" name="someSwitchOption001" type="checkbox"/>
+	                            <label for="someSwitchOptionDanger1" class="label-danger"></label>
+	                        </div>
+	                    </li>
+
+				  		<li class="list-group-item" id="config-button">
+	                        Módulo Lâmpada
+	                        <div class="material-switch pull-right">
+	                            <input id="someSwitchOptionDanger2" name="someSwitchOption002" type="checkbox"/>
+	                            <label for="someSwitchOptionDanger2" class="label-danger"></label>
+	                        </div>
+	                    </li>
+
+				  		<li class="list-group-item" id="config-button">
+	                        Módulo GPS
+	                        <div class="material-switch pull-right">
+	                            <input id="someSwitchOptionDanger3" name="someSwitchOption003" type="checkbox"/>
+	                            <label for="someSwitchOptionDanger3" class="label-danger"></label>
+	                        </div>
+	                    </li>
+
+				  		<li class="list-group-item" id="config-button">
+	                        Módulo Reprodutor de Música
+	                        <div class="material-switch pull-right">
+	                            <input id="someSwitchOptionDanger4" name="someSwitchOption004" type="checkbox"/>
+	                            <label for="someSwitchOptionDanger4" class="label-danger"></label>
+	                        </div>
+	                    </li>
+
+	                    <li class="list-group-item" id="config-button">
+	                        Módulo Reprodutor de Vídeo
+	                        <div class="material-switch pull-right">
+	                            <input id="someSwitchOptionDanger5" name="someSwitchOption005" type="checkbox"/>
+	                            <label for="someSwitchOptionDanger5" class="label-danger"></label>
+	                        </div>
+	                    </li>
+
+	                    <li class="list-group-item" id="config-button">
+	                        Módulo Assistente Virtual
+	                        <div class="material-switch pull-right">
+	                            <input id="someSwitchOptionDanger6" name="someSwitchOption006" type="checkbox"/>
+	                            <label for="someSwitchOptionDanger6" class="label-danger"></label>
+	                        </div>
+	                    </li>
+	                </div>
+			    </div>
+			  </div>
+			</div>
 
 		</div>
 
@@ -134,4 +213,14 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript">
+    	jQuery(window).load(function() {
+    		jQuery("status").fadeOut();
+
+    		jQuery("#preloader").delay(1000).fadeOut("slow");
+    	})
+    </script>
 </html>
