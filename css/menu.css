@@ -1,7 +1,23 @@
+#navbar {
+	background: none;
+}
 #navbar ul {
+
 }
 #navbar ul li button {
 	margin-top: 6px;
 	/*background-color: #563D7C;
 	color: white;*/
+}
+
+#navbar #menu-hr{
+	margin-top: 8px;
+	font-size: 24px;
+	font-family: 'Lobster', cursive;
+	color: black;
+}
+
+@media screen and (max-width: 820px) {
+	#navbar #menu-hr{
+		margin-left: 10px;
 }

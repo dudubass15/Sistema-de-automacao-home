@@ -1,3 +1,9 @@
+<?php
+
+include 'models/horario.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,14 +50,15 @@
 	    <div id="navbar" class="navbar-collapse collapse">
 	    	<ul class="nav navbar-nav navbar-right">
             	<li>
-            		<button type="button" class="btn btn-default">Sair
-            		<span class="glyphicon glyphicon-log-in"></span></button>
+            		<!-- <button type="button" class="btn btn-default">Sair
+            		<span class="glyphicon glyphicon-log-in"></span></button> -->
+            		<p id="menu-hr"></p>
         		</li>
         	</ul>
 	   	</div>
 
 	  </div>
-	</nav>
+	</nav><br>
 
 	<div class="container">
 
@@ -216,6 +223,8 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+    <script src="js/horario.js"></script>
 
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 

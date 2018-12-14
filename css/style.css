@@ -61,6 +61,7 @@ body{
 	text-align: center;
 	font-family: 'Lobster', cursive;
 	font-size: 20px;
+	display: block;
 }
 
 /* Deixando Responsivo tela */
@@ -115,7 +116,8 @@ body{
 	   	margin-top: 2px;
    }
    #footer-rodape .container p{
-	   	color: #FFFFFF;
+	   	margin-top: 6px;
+	   	color: black;
 	   	text-align: center;
    }
 }
@@ -169,7 +171,8 @@ body{
 	   	margin-top: 2px;
    }
    #footer-rodape .container p{
-	   	color: #FFFFFF;
+	   	margin-top: 6px;
+	   	color: black;
 	   	text-align: center;
    }
 }
@@ -224,7 +227,8 @@ body{
 	   	margin-top: 2px;
    }
    #footer-rodape .container p{
-	   	color: #FFFFFF;
+	   	margin-top: 6px;
+	   	color: black;
 	   	text-align: center;
    }
 }
@@ -279,7 +283,8 @@ body{
 	   	margin-top: 2px;
    }
    #footer-rodape .container p{
-	   	color: #FFFFFF;
+	   	margin-top: 6px;
+	   	color: black;
 	   	text-align: center;
    }
 }
@@ -335,7 +340,8 @@ body{
 	   	margin-top: 2px;
    }
    #footer-rodape .container p{
-	   	color: #FFFFFF;
+	   	margin-top: 6px;
+	   	color: black;
 	   	text-align: center;
    }
 }
@@ -391,7 +397,8 @@ body{
 	   	margin-top: 2px;
    }
    #footer-rodape .container p{
-	   	color: #FFFFFF;
+	   	margin-top: 6px;
+	   	color: black;
 	   	text-align: center;
    }
 }
@@ -447,7 +454,8 @@ body{
 	   	margin-top: 2px;
    }
    #footer-rodape .container p{
-	   	color: #FFFFFF;
+   		margin-top: 6px;
+	   	color: black;
 	   	text-align: center;
    }
 }
