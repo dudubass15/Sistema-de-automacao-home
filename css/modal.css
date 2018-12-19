@@ -1,7 +1,14 @@
 #modal-content-corpo{
 	width: 400px;
-	height: 400px;
+	height: 430px;
 }
 #modal-content-corpo h3{
 	text-align: center;
+}
+#modal-content-corpo #modal-form-button{
+	width: 100%;
+}
+#modal-content-corpo #modal-form-button button{
+	margin-left: 43%;
+	margin-right: 43%;
 }

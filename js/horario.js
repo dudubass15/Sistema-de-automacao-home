@@ -13,7 +13,8 @@ function startTime() {
     // add a zero in front of numbers<10
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('menu-hr').innerHTML = h + ":" + m + ":" + s;
+    document.getElementById('menu-hr').innerHTML = h + ":" + m;
+    //document.getElementById('menu-hr').innerHTML = h + ":" + m + ":" + s;
     t = setTimeout(function () {
         startTime()
     }, 500);

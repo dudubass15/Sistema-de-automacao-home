@@ -1,6 +1,7 @@
 <?php
 
-include 'models/horario.php';
+	include 'models/horario.php';
+	include 'models/config.app.view.php';
 
 ?>
 
@@ -50,8 +51,6 @@ include 'models/horario.php';
 	    <div id="navbar" class="navbar-collapse collapse">
 	    	<ul class="nav navbar-nav navbar-right">
             	<li>
-            		<!-- <button type="button" class="btn btn-default">Sair
-            		<span class="glyphicon glyphicon-log-in"></span></button> -->
             		<p id="menu-hr"></p>
         		</li>
         	</ul>
@@ -73,7 +72,6 @@ include 'models/horario.php';
 		</div>
 
 		<div class="jumbotron" id="area-menu">
-
 			<!-- Button Casa/Home -->
 			<a href="index.php">
 				<div class="jumbotron" id="area-button">
@@ -83,59 +81,71 @@ include 'models/horario.php';
 				</div>
 			</a>
 
-			<!-- Button Wifi -->
-			<a href="#" class="active">
-				<div class="jumbotron" id="area-button">
-					<div class="button-painel">
-						<img src="icon/wifi.png" title="Wifi">
+			<?php if(in_array('wifi', $array_permissao_config)): ?>
+				<!-- Button Wifi -->
+				<a href="#" class="active">
+					<div class="jumbotron" id="area-button">
+						<div class="button-painel">
+							<img src="icon/wifi.png" title="Wifi">
+						</div>
 					</div>
-				</div>
-			</a>
+				</a>
+			<?php endif ?>
 
-			<!-- Button Lâmpada/Energia -->
-			<a href="#">
-				<div class="jumbotron" id="area-button">
-					<div class="button-painel">
-						<img src="icon/idea.png" title="Lâmpada">
+			<?php if(in_array('lampada', $array_permissao_config)): ?>
+				<!-- Button Lâmpada/Energia -->
+				<a href="#">
+					<div class="jumbotron" id="area-button">
+						<div class="button-painel">
+							<img src="icon/idea.png" title="Lâmpada">
+						</div>
 					</div>
-				</div>
-			</a>
+				</a>
+			<?php endif ?>
 
-			<!-- Button GPS/Localização -->
-			<a href="#">
-				<div class="jumbotron" id="area-button">
-					<div class="button-painel">
-						<img src="icon/placeholder.png" title="GPS">
+			<?php if(in_array('gps', $array_permissao_config)): ?>
+				<!-- Button GPS/Localização -->
+				<a href="#">
+					<div class="jumbotron" id="area-button">
+						<div class="button-painel">
+							<img src="icon/placeholder.png" title="GPS">
+						</div>
 					</div>
-				</div>
-			</a>
+				</a>
+			<?php endif ?>
 
-			<!-- Button Reprodutor de Música -->
-			<a href="#">
-				<div class="jumbotron" id="area-button">
-					<div class="button-painel">
-						<img src="icon/music-player.png" title="Reprodutor de Música">
+			<?php if(in_array('musica', $array_permissao_config)): ?>
+				<!-- Button Reprodutor de Música -->
+				<a href="#">
+					<div class="jumbotron" id="area-button">
+						<div class="button-painel">
+							<img src="icon/music-player.png" title="Reprodutor de Música">
+						</div>
 					</div>
-				</div>
-			</a>
+				</a>
+			<?php endif ?>
 
-			<!-- Button Reprodutor de Vídeo -->
-			<a href="#">
-				<div class="jumbotron" id="area-button">
-					<div class="button-painel">
-						<img src="icon/video-player.png" title="Reprodutor de Vídeo">
+			<?php if(in_array('video', $array_permissao_config)): ?>
+				<!-- Button Reprodutor de Vídeo -->
+				<a href="video.php">
+					<div class="jumbotron" id="area-button">
+						<div class="button-painel">
+							<img src="icon/video-player.png" title="Reprodutor de Vídeo">
+						</div>
 					</div>
-				</div>
-			</a>
+				</a>
+			<?php endif ?>
 
-			<!-- Button Microphone -->
-			<a href="#">
-				<div class="jumbotron" id="area-button">
-					<div class="button-painel">
-						<img src="icon/microphone.png" title="Assistente Virtual">
+			<?php if(in_array('assistente', $array_permissao_config)): ?>
+				<!-- Button Microphone -->
+				<a href="#">
+					<div class="jumbotron" id="area-button">
+						<div class="button-painel">
+							<img src="icon/microphone.png" title="Assistente Virtual">
+						</div>
 					</div>
-				</div>
-			</a>
+				</a>
+			<?php endif ?>
 
 			<!-- Button Configuração -->
 			<a href="#">
@@ -155,53 +165,60 @@ include 'models/horario.php';
 
 				  		<h3>Configuração</h3>
 
-				  		<li class="list-group-item" id="config-button">
-	                        Módulo Wifi
-	                        <div class="material-switch pull-right">
-	                            <input id="someSwitchOptionDanger1" name="someSwitchOption001" type="checkbox"/>
-	                            <label for="someSwitchOptionDanger1" class="label-danger"></label>
-	                        </div>
-	                    </li>
+				  		<form method="POST" action="models/config.app.add.php">
+					  		<li class="list-group-item" id="config-button">
+		                        Módulo Wifi
+		                        <div class="material-switch pull-right">
+		                            <input id="someSwitchOptionDanger1" name="wifi" value="wifi" type="checkbox"/>
+		                            <label for="someSwitchOptionDanger1" class="label-danger"></label>
+		                        </div>
+		                    </li>
 
-				  		<li class="list-group-item" id="config-button">
-	                        Módulo Lâmpada
-	                        <div class="material-switch pull-right">
-	                            <input id="someSwitchOptionDanger2" name="someSwitchOption002" type="checkbox"/>
-	                            <label for="someSwitchOptionDanger2" class="label-danger"></label>
-	                        </div>
-	                    </li>
+					  		<li class="list-group-item" id="config-button">
+		                        Módulo Lâmpada
+		                        <div class="material-switch pull-right">
+		                            <input id="someSwitchOptionDanger2" name="lampada" value="lampada" type="checkbox"/>
+		                            <label for="someSwitchOptionDanger2" class="label-danger"></label>
+		                        </div>
+		                    </li>
 
-				  		<li class="list-group-item" id="config-button">
-	                        Módulo GPS
-	                        <div class="material-switch pull-right">
-	                            <input id="someSwitchOptionDanger3" name="someSwitchOption003" type="checkbox"/>
-	                            <label for="someSwitchOptionDanger3" class="label-danger"></label>
-	                        </div>
-	                    </li>
+					  		<li class="list-group-item" id="config-button">
+		                        Módulo GPS
+		                        <div class="material-switch pull-right">
+		                            <input id="someSwitchOptionDanger3" name="gps" value="gps" type="checkbox"/>
+		                            <label for="someSwitchOptionDanger3" class="label-danger"></label>
+		                        </div>
+		                    </li>
 
-				  		<li class="list-group-item" id="config-button">
-	                        Módulo Reprodutor de Música
-	                        <div class="material-switch pull-right">
-	                            <input id="someSwitchOptionDanger4" name="someSwitchOption004" type="checkbox"/>
-	                            <label for="someSwitchOptionDanger4" class="label-danger"></label>
-	                        </div>
-	                    </li>
+					  		<li class="list-group-item" id="config-button">
+		                        Módulo Reprodutor de Música
+		                        <div class="material-switch pull-right">
+		                            <input id="someSwitchOptionDanger4" name="musica" value="musica" type="checkbox"/>
+		                            <label for="someSwitchOptionDanger4" class="label-danger"></label>
+		                        </div>
+		                    </li>
 
-	                    <li class="list-group-item" id="config-button">
-	                        Módulo Reprodutor de Vídeo
-	                        <div class="material-switch pull-right">
-	                            <input id="someSwitchOptionDanger5" name="someSwitchOption005" type="checkbox"/>
-	                            <label for="someSwitchOptionDanger5" class="label-danger"></label>
-	                        </div>
-	                    </li>
+		                    <li class="list-group-item" id="config-button">
+		                        Módulo Reprodutor de Vídeo
+		                        <div class="material-switch pull-right">
+		                            <input id="someSwitchOptionDanger5" name="video" value="video" type="checkbox"/>
+		                            <label for="someSwitchOptionDanger5" class="label-danger"></label>
+		                        </div>
+		                    </li>
 
-	                    <li class="list-group-item" id="config-button">
-	                        Módulo Assistente Virtual
-	                        <div class="material-switch pull-right">
-	                            <input id="someSwitchOptionDanger6" name="someSwitchOption006" type="checkbox"/>
-	                            <label for="someSwitchOptionDanger6" class="label-danger"></label>
-	                        </div>
-	                    </li>
+		                    <li class="list-group-item" id="config-button">
+		                        Módulo Assistente Virtual
+		                        <div class="material-switch pull-right">
+		                            <input id="someSwitchOptionDanger6" name="assistente" value="assistente" type="checkbox"/>
+		                            <label for="someSwitchOptionDanger6" class="label-danger"></label>
+		                        </div>
+		                    </li><br>
+
+		                    <div id="modal-form-button">
+		                    	<button type="submit" class="btn btn-default">Salvar</button>
+		                	</div>
+		                </form>
+
 	                </div>
 			    </div>
 			  </div>
@@ -225,6 +242,8 @@ include 'models/horario.php';
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 
     <script src="js/horario.js"></script>
+
+    <script src="js/ajax_modal.js"></script>
 
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
