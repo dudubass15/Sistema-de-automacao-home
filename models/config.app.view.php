@@ -2,15 +2,7 @@
 
 include 'configuracao/bd.php';
 
-	$dsn = "mysql:dbname=automacao;host=localhost";
-	$dbuser = "root";
-	$dbpass = "";
-
-	try {
-		$pdo = new PDO($dsn, $dbuser, $dbpass);
-	} catch(PDOException $e) {
-		echo "Falhou: ".$e->getMessage();
-	}
+	global $pdo;
 
 	$sql = "SELECT nomes FROM modulos";
 	$qry = $pdo->query($sql);

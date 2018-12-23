@@ -94,7 +94,7 @@
 
 			<?php if(in_array('lampada', $array_permissao_config)): ?>
 				<!-- Button Lâmpada/Energia -->
-				<a href="#">
+				<a href="#" id="lampada" onclick="evento_lampada();">
 					<div class="jumbotron" id="area-button">
 						<div class="button-painel">
 							<img src="icon/idea.png" title="Lâmpada">
@@ -102,6 +102,12 @@
 					</div>
 				</a>
 			<?php endif ?>
+
+			<!-- <button class="jumbotron" id="area-button" style="border: none;">
+				<div class="button-painel">
+					<img src="icon/idea.png" title="Lâmpada">
+				</div>
+			</button> -->
 
 			<?php if(in_array('gps', $array_permissao_config)): ?>
 				<!-- Button GPS/Localização -->
@@ -254,4 +260,6 @@
     		jQuery("#preloader").delay(1000).fadeOut("slow");
     	})
     </script>
+
+    <script src="js/teste.js"></script>
 </html>

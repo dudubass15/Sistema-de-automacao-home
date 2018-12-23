@@ -1,6 +1,6 @@
 <?php
 
-include '../configuracao/bd.php';
+require '../configuracao/bd.php';
 
 	if(isset($_POST['wifi']) && !empty($_POST['wifi'])) {
 		error_reporting(0);
@@ -17,23 +17,14 @@ include '../configuracao/bd.php';
 	} else{
 
 		header('Location: ../index.php');
-
 	}
 
 	function add($modulo_wifi, $modulo_lampada, $modulo_gps, $modulo_musica, $modulo_video, $modulo_assistente) {
 
+		global $pdo;
+
 		$array = [$modulo_wifi, $modulo_lampada, $modulo_gps, $modulo_musica, $modulo_video, $modulo_assistente];
 		$permissao = implode(",", $array);
-
-		$dsn = "mysql:dbname=automacao;host=localhost";
-		$dbuser = "root";
-		$dbpass = "";
-
-		try {
-			$pdo = new PDO($dsn, $dbuser, $dbpass);
-		} catch(PDOException $e) {
-			echo "Falhou: ".$e->getMessage();
-		}
 
 		$sql = "INSERT INTO modulos (nomes) VALUES ('$permissao')";
 		$sql = $pdo->query($sql);
