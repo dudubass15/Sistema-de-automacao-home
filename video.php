@@ -4,10 +4,11 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Gerenciador</title>
+	<title>Automação Home</title>
 	<!-- CSS padrão/default -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/video.css">
 
 	<!-- CSS Aplicado para a configuração da aplicação --->
 	<link rel="stylesheet" type="text/css" href="css/config.app.css">
@@ -48,14 +49,28 @@
 	   	</div>
 
 	  </div>
-	</nav><br>
+	</nav>
+
+	<div id="icon-voltar">
+		<a href="index.php">
+			<img src="icon/return.png" width="40" title="Retornar">
+		</a>
+	</div><br>
 
 	<div class="container">
 
-		<video width="320" height="240" controls>
-			<source src="multimidias/videos/teste.mp4" type="video/mp4">
-			<source src="multimidias/videos/teste.ogg" type="video/ogg">
-		</video>
+		<div id="area-video">
+
+			<div id="div-video">
+				<video width="100%" height="350" controls>
+					<source src="multimidias/videos/teste.mp4" type="video/mp4">
+					<source src="multimidias/videos/teste.ogg" type="video/ogg">
+				</video>
+			</div>
+
+			<div id="div-diretorio"></div>
+
+		</div>
 
 	</div>
 
