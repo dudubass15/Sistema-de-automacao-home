@@ -11,7 +11,7 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Gerenciador</title>
+	<title>Automação Home</title>
 	<!-- CSS padrão/default -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/menu.css">
@@ -174,50 +174,128 @@
 				  		<form method="POST" action="models/config.app.add.php">
 					  		<li class="list-group-item" id="config-button">
 		                        Módulo Wifi
-		                        <div class="material-switch pull-right">
-		                            <input id="someSwitchOptionDanger1" name="wifi" value="wifi" type="checkbox"/>
-		                            <label for="someSwitchOptionDanger1" class="label-danger"></label>
-		                        </div>
+		                        <?php if(in_array('wifi', $array_permissao_config)): ?>
+			                        <div class="material-switch pull-right">
+			                            <input id="someSwitchOptionDanger1" name="wifi" value="wifi" type="checkbox" checked />
+			                            <label for="someSwitchOptionDanger1" class="label-danger"></label>
+			                        </div>
+
+			                        <style type="text/css">
+			                        	#opcao1 {
+			                        		display: none;
+			                        	}
+			                        </style>
+		                        <?php endif ?>
+
+		                        	<div class="material-switch pull-right" id="opcao1">
+		                        	    <input id="someSwitchOptionDanger1" name="wifi" value="wifi" type="checkbox"/>
+		                        	    <label for="someSwitchOptionDanger1" class="label-danger"></label>
+		                        	</div>
 		                    </li>
 
 					  		<li class="list-group-item" id="config-button">
 		                        Módulo Lâmpada
-		                        <div class="material-switch pull-right">
-		                            <input id="someSwitchOptionDanger2" name="lampada" value="lampada" type="checkbox"/>
-		                            <label for="someSwitchOptionDanger2" class="label-danger"></label>
-		                        </div>
+		                        <?php if(in_array('lampada', $array_permissao_config)): ?>
+			                        <div class="material-switch pull-right">
+			                            <input id="someSwitchOptionDanger2" name="lampada" value="lampada" type="checkbox" checked />
+			                            <label for="someSwitchOptionDanger2" class="label-danger"></label>
+			                        </div>
+
+			                        <style type="text/css">
+			                        	#opcao2 {
+			                        		display: none;
+			                        	}
+			                        </style>
+		                        <?php endif ?>
+
+		                        	<div class="material-switch pull-right" id="opcao2">
+		                        	    <input id="someSwitchOptionDanger2" name="lampada" value="lampada" type="checkbox" />
+		                        	    <label for="someSwitchOptionDanger2" class="label-danger"></label>
+		                        	</div>
 		                    </li>
 
 					  		<li class="list-group-item" id="config-button">
 		                        Módulo GPS
-		                        <div class="material-switch pull-right">
-		                            <input id="someSwitchOptionDanger3" name="gps" value="gps" type="checkbox"/>
-		                            <label for="someSwitchOptionDanger3" class="label-danger"></label>
-		                        </div>
+		                        <?php if(in_array('gps', $array_permissao_config)): ?>
+			                        <div class="material-switch pull-right">
+			                            <input id="someSwitchOptionDanger3" name="gps" value="gps" type="checkbox" checked />
+			                            <label for="someSwitchOptionDanger3" class="label-danger"></label>
+			                        </div>
+
+			                        <style type="text/css">
+			                        	#opcao3 {
+			                        		display: none;
+			                        	}
+			                        </style>
+		                        <?php endif ?>
+
+		                        	<div class="material-switch pull-right" id="opcao3">
+			                            <input id="someSwitchOptionDanger3" name="gps" value="gps" type="checkbox"/>
+			                            <label for="someSwitchOptionDanger3" class="label-danger"></label>
+			                        </div>
 		                    </li>
 
 					  		<li class="list-group-item" id="config-button">
 		                        Módulo Reprodutor de Música
-		                        <div class="material-switch pull-right">
-		                            <input id="someSwitchOptionDanger4" name="musica" value="musica" type="checkbox"/>
-		                            <label for="someSwitchOptionDanger4" class="label-danger"></label>
-		                        </div>
+		                        <?php if(in_array('musica', $array_permissao_config)): ?>
+			                        <div class="material-switch pull-right">
+			                            <input id="someSwitchOptionDanger4" name="musica" value="musica" type="checkbox" checked />
+			                            <label for="someSwitchOptionDanger4" class="label-danger"></label>
+			                        </div>
+
+			                        <style type="text/css">
+			                        	#opcao4 {
+			                        		display: none;
+			                        	}
+			                        </style>
+			                    <?php endif ?>
+
+			                    	<div class="material-switch pull-right" id="opcao4">
+			                    	    <input id="someSwitchOptionDanger4" name="musica" value="musica" type="checkbox"/>
+			                    	    <label for="someSwitchOptionDanger4" class="label-danger"></label>
+			                    	</div>
 		                    </li>
 
 		                    <li class="list-group-item" id="config-button">
 		                        Módulo Reprodutor de Vídeo
-		                        <div class="material-switch pull-right">
-		                            <input id="someSwitchOptionDanger5" name="video" value="video" type="checkbox"/>
-		                            <label for="someSwitchOptionDanger5" class="label-danger"></label>
-		                        </div>
+		                        <?php if(in_array('video', $array_permissao_config)): ?>
+			                        <div class="material-switch pull-right">
+			                            <input id="someSwitchOptionDanger5" name="video" value="video" type="checkbox" checked />
+			                            <label for="someSwitchOptionDanger5" class="label-danger"></label>
+			                        </div>
+
+			                        <style type="text/css">
+			                        	#opcao5 {
+			                        		display: none;
+			                        	}
+			                        </style>
+			                    <?php endif ?>
+
+			                    	<div class="material-switch pull-right" id="opcao5">
+			                    	    <input id="someSwitchOptionDanger5" name="video" value="video" type="checkbox"/>
+			                    	    <label for="someSwitchOptionDanger5" class="label-danger"></label>
+			                    	</div>
 		                    </li>
 
 		                    <li class="list-group-item" id="config-button">
 		                        Módulo Assistente Virtual
-		                        <div class="material-switch pull-right">
-		                            <input id="someSwitchOptionDanger6" name="assistente" value="assistente" type="checkbox"/>
-		                            <label for="someSwitchOptionDanger6" class="label-danger"></label>
-		                        </div>
+		                        <?php if(in_array('assistente', $array_permissao_config)): ?>
+			                        <div class="material-switch pull-right">
+			                            <input id="someSwitchOptionDanger6" name="assistente" value="assistente" type="checkbox" checked />
+			                            <label for="someSwitchOptionDanger6" class="label-danger"></label>
+			                        </div>
+
+			                        <style type="text/css">
+			                        	#opcao6 {
+			                        		display: none;
+			                        	}
+			                        </style>
+			                    <?php endif ?>
+
+			                    	<div class="material-switch pull-right" id="opcao6">
+			                            <input id="someSwitchOptionDanger6" name="assistente" value="assistente" type="checkbox"/>
+			                            <label for="someSwitchOptionDanger6" class="label-danger"></label>
+			                        </div>
 		                    </li><br>
 
 		                    <div id="modal-form-button">
@@ -236,7 +314,7 @@
 
 	<footer class="footer navbar navbar-default" id="footer-rodape">
 	    <div class="container">
-	    	<p class="text-muted">2018 Automação Home, Inc.</p>
+	    	<p class="text-muted"><?php echo date('Y'); ?> Automação Home, Inc.</p>
 	    </div>
 	</footer>
 
@@ -260,6 +338,4 @@
     		jQuery("#preloader").delay(1000).fadeOut("slow");
     	})
     </script>
-
-    <script src="js/teste.js"></script>
 </html>
