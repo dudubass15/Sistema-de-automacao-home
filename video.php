@@ -1,3 +1,34 @@
+<?php
+
+	include 'models/config.app.view.php';
+
+	//print_r($array_permissao_config); die;
+
+	if(!in_array('video', $array_permissao_config)){
+		//header('Location: index.php');
+
+		echo
+			"<style>
+				#area-video {
+					display: none;
+				}
+				#msg {
+					margin-top: 10%;
+					text-align: center;
+				}
+			</style>";
+		
+	} else{
+		echo
+		"<style>
+			#msg {
+				display: none;
+			}
+		</style>";
+	}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,6 +90,10 @@
 
 	<div class="container">
 
+		<div class="alert alert-danger" role="alert" id="msg">
+		  <p><strong>Ops!</strong> Você não ativou o módulo de reprodução de vídeo nas configurações. :(</p>
+		</div>
+
 		<div id="area-video">
 
 			<div id="div-video">
@@ -68,7 +103,21 @@
 				</video>
 			</div>
 
-			<div id="div-diretorio"></div>
+			<div id="div-diretorio">
+				<?php
+
+					$dir = "multimidias/videos";
+					$diretorio = dir($dir);
+					 
+					echo "Lista de Arquivos do diretório '<strong>".$path."</strong>':<br />";
+					while($arquivo = $diretorio -> read()){
+					echo "<a href='".$path.$arquivo."'>".$arquivo."</a><br />";
+					}
+					$diretorio -> close();
+					
+
+				?>
+			</div>
 
 		</div>
 
