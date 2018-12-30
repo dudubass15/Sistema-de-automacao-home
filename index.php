@@ -28,11 +28,14 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 
+	<!-- Animação de transição de uma página para outra -->
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+
 	<!-- Fonts Google -->
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
 </head>
-<body>
+<body id="pagina_retorno">
 
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
@@ -71,7 +74,7 @@
 			</div>
 		</div>
 
-		<div class="jumbotron" id="area-menu">
+		<div class="jumbotron animated" id="area-menu">
 			<!-- Button Casa/Home -->
 			<a href="index.php">
 				<div class="jumbotron" id="area-button">
@@ -94,7 +97,7 @@
 
 			<?php if(in_array('lampada', $array_permissao_config)): ?>
 				<!-- Button Lâmpada/Energia -->
-				<a href="#" id="lampada" onclick="evento_lampada();">
+				<a href="teste.php" id="lampada">
 					<div class="jumbotron" id="area-button">
 						<div class="button-painel">
 							<img src="icon/idea.png" title="Lâmpada">
@@ -105,16 +108,18 @@
 
 			<!-- <button class="jumbotron" id="area-button" style="border: none;">
 				<div class="button-painel">
-					<img src="icon/idea.png" title="Lâmpada">
+					<a href="#" class="btn btn-primary btn-lg active">
+						<img src="icon/idea.png" title="Lâmpada">
+					</a>
 				</div>
 			</button> -->
 
-			<?php if(in_array('gps', $array_permissao_config)): ?>
+			<?php if(in_array('ventilador', $array_permissao_config)): ?>
 				<!-- Button GPS/Localização -->
-				<a href="#">
+				<a href="javascript::" onclick="">
 					<div class="jumbotron" id="area-button">
 						<div class="button-painel">
-							<img src="icon/placeholder.png" title="GPS">
+							<img src="icon/fan.png" title="Ventilador">
 						</div>
 					</div>
 				</a>
@@ -122,7 +127,7 @@
 
 			<?php if(in_array('musica', $array_permissao_config)): ?>
 				<!-- Button Reprodutor de Música -->
-				<a href="#">
+				<a href="javascript::" onclick="">
 					<div class="jumbotron" id="area-button">
 						<div class="button-painel">
 							<img src="icon/music-player.png" title="Reprodutor de Música">
@@ -133,7 +138,7 @@
 
 			<?php if(in_array('video', $array_permissao_config)): ?>
 				<!-- Button Reprodutor de Vídeo -->
-				<a href="video.php">
+				<a href="javascript::" onclick="">
 					<div class="jumbotron" id="area-button">
 						<div class="button-painel">
 							<img src="icon/video-player.png" title="Reprodutor de Vídeo">
@@ -144,7 +149,7 @@
 
 			<?php if(in_array('assistente', $array_permissao_config)): ?>
 				<!-- Button Microphone -->
-				<a href="#">
+				<a href="javascript::" onclick="">
 					<div class="jumbotron" id="area-button">
 						<div class="button-painel">
 							<img src="icon/microphone.png" title="Assistente Virtual">
@@ -215,10 +220,10 @@
 		                    </li>
 
 					  		<li class="list-group-item" id="config-button">
-		                        Módulo GPS
-		                        <?php if(in_array('gps', $array_permissao_config)): ?>
+		                        Módulo Ventilador
+		                        <?php if(in_array('ventilador', $array_permissao_config)): ?>
 			                        <div class="material-switch pull-right">
-			                            <input id="someSwitchOptionDanger3" name="gps" value="gps" type="checkbox" checked />
+			                            <input id="someSwitchOptionDanger3" name="ventilador" value="ventilador" type="checkbox" checked />
 			                            <label for="someSwitchOptionDanger3" class="label-danger"></label>
 			                        </div>
 
@@ -230,7 +235,7 @@
 		                        <?php endif ?>
 
 		                        	<div class="material-switch pull-right" id="opcao3">
-			                            <input id="someSwitchOptionDanger3" name="gps" value="gps" type="checkbox"/>
+			                            <input id="someSwitchOptionDanger3" name="ventilador" value="ventilador" type="checkbox"/>
 			                            <label for="someSwitchOptionDanger3" class="label-danger"></label>
 			                        </div>
 		                    </li>
@@ -329,6 +334,8 @@
 
     <script src="js/ajax_modal.js"></script>
 
+    <script src="js/load_page.js"></script>
+
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
     <script type="text/javascript">
@@ -337,5 +344,9 @@
 
     		jQuery("#preloader").delay(1000).fadeOut("slow");
     	})
+
+   //  	function Animar() {
+			// $('#area-menu').addClass('bounceOutLeft');
+	 	// }
     </script>
 </html>

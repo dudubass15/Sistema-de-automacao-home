@@ -7,23 +7,23 @@ require '../configuracao/bd.php';
 
 		$modulo_wifi = $_POST['wifi'];
 		$modulo_lampada = $_POST['lampada'];
-		$modulo_gps = $_POST['gps'];
+		$modulo_ventilador = $_POST['ventilador'];
 		$modulo_musica = $_POST['musica'];
 		$modulo_video = $_POST['video'];
 		$modulo_assistente = $_POST['assistente'];
 
-		modulos($modulo_wifi, $modulo_lampada, $modulo_gps, $modulo_musica, $modulo_video, $modulo_assistente);
+		modulos($modulo_wifi, $modulo_lampada, $modulo_ventilador, $modulo_musica, $modulo_video, $modulo_assistente);
 
 	} else{
 
 		header('Location: ../index.php');
 	}
 
-	function modulos($modulo_wifi, $modulo_lampada, $modulo_gps, $modulo_musica, $modulo_video, $modulo_assistente) {
+	function modulos($modulo_wifi, $modulo_lampada, $modulo_ventilador, $modulo_musica, $modulo_video, $modulo_assistente) {
 
 		global $pdo;
 
-		$array = [$modulo_wifi, $modulo_lampada, $modulo_gps, $modulo_musica, $modulo_video, $modulo_assistente];
+		$array = [$modulo_wifi, $modulo_lampada, $modulo_ventilador, $modulo_musica, $modulo_video, $modulo_assistente];
 		$permissao = implode(",", $array);
 
 		// Abaixo código para contar números de linha no banco ...
