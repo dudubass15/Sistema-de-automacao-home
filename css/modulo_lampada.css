@@ -1,0 +1,28 @@
+.corpo-teste {
+	width: 100%;
+}
+.cabeçalho-modulo {
+	width: 100%;
+	height: 70px;
+}
+.cabeçalho-modulo h1 {
+	float: left;
+}
+.cabeçalho-modulo a {
+	float: right;
+	margin-top: 20px;
+}
+#button-action{
+	width: 200px;
+	height: 24px;
+	padding-left: 100px;
+}
+#button-action a {
+	margin-left: 5px;
+	margin-top: -10px;
+}
+#button-action a span {
+	font-size: 18px; 
+	color: #d9534f;
+	top: 3px;
+}

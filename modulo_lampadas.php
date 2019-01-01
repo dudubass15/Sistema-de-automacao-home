@@ -1,5 +1,35 @@
 <?php
 
+	include 'models/horario.php';
+	include 'models/config.app.view.php';
+	include 'models/modulo_lampada.view.php';
+
+	if(!in_array('lampada', $array_permissao_config)){
+		//header('Location: index.php');
+
+		echo
+			"<style>
+				#texto {
+					display: none;
+				}
+				#msg {
+					margin-top: 10%;
+					text-align: center;
+				}
+			</style>";
+		
+	} else{
+		echo
+		"<style>
+			#msg {
+				display: none;
+			}
+			.label-danger {
+				margin-top: 10px;
+		}
+		</style>";
+	}
+
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +45,6 @@
 	<link rel="stylesheet" type="text/css" href="css/modal.css">
 	<link rel="stylesheet" type="text/css" href="css/material-switch.css">
 	<link rel="stylesheet" type="text/css" href="css/modulo_lampada.css">
-
-	<link rel="stylesheet" type="text/css" href="css/teste.css">
 
 	<!-- CSS Aplicado para a configuração da aplicação --->
 	<link rel="stylesheet" type="text/css" href="css/config.app.css">
@@ -60,16 +88,82 @@
 	   	</div>
 
 	  </div>
-	</nav>
+	</nav><br>
 
 	<div class="container">
-		<div class="wrapper">
-			<div class="text"></div>
-			
-			<div class="button-acao">
-				<input type="checkbox" class="switch_1">
+
+		<div class="alert alert-danger" role="alert" id="msg">
+		  <p><strong>Ops!</strong> Você não ativou o módulo de lâmpada nas configurações. :(</p>
+		</div>
+
+		<div class="corpo-teste animated" id="texto">
+
+			<div class="cabeçalho-modulo">
+				<h1>Módulo Lâmpada</h1>
+
+		        <a href="#" class="btn btn-info btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+		          <span class="glyphicon glyphicon-plus"></span> Novo 
+		        </a>
+			</div>
+
+			<br>
+
+            <?php foreach($lampadas_view as $l): ?>
+            	<form>
+            		<li class="list-group-item" id="config-button">
+            		    <?php echo($l['descricao']); ?>
+            		    <div class="material-switch pull-right" id="button-action">
+            		        <input id="<?php echo($l['id']); ?>" name="lampada" value="lampada" type="checkbox" />
+            		        <label for="<?php echo($l['id']); ?>" class="label-danger"></label>
+
+            		        <a href="models/modulo_lampada.edit.php?id=<?php echo($l['id']); ?>" name="editar">
+            		        	<span class="glyphicon glyphicon-edit"></span>
+            		        </a>
+
+            		        <a href="models/modulo_lampada.del.php?id=<?php echo($l['id']); ?>">
+            		        	<span class="glyphicon glyphicon-trash"></span>
+            		        </a>
+            		    </div>
+            		</li>
+            	</form>
+            <?php endforeach; ?>
+
+		</div>
+	    
+
+		<!-- Modal para cadastro de nova lâmpada -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="exampleModalLabel">Novo Cadastro</h4>
+					</div>
+					<div class="modal-body">
+						<form method="POST" action="models/modulo_lampada.add.php">
+							<div class="form-group">
+								<label for="descricao" class="control-label">Descricao:</label>
+								<input type="text" class="form-control" id="descricao" name="descricao">
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+								<button type="submit" class="btn btn-primary">Salvar</button>
+							</div>
+						</form>
+					</div>
+
+				</div>
 			</div>
 		</div>
+		<!-- Fim do Modal -->
+
+		<script>
+			function Animar() {
+				$('#texto').addClass('slideInLeft');
+		 	}
+		</script>
+
 	</div>
 
 	<footer class="footer navbar navbar-default" id="footer-rodape">
@@ -97,11 +191,5 @@
 
     		jQuery("#preloader").delay(1000).fadeOut("slow");
     	})
-    </script>
-
-    <script>
-    	function Animar() {
-    		$('#texto').addClass('slideInLeft');
-     	}
     </script>
 </html>

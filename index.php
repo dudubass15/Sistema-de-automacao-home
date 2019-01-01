@@ -97,7 +97,7 @@
 
 			<?php if(in_array('lampada', $array_permissao_config)): ?>
 				<!-- Button Lâmpada/Energia -->
-				<a href="teste.php" id="lampada">
+				<a href="modulo_lampadas.php" id="lampada">
 					<div class="jumbotron" id="area-button">
 						<div class="button-painel">
 							<img src="icon/idea.png" title="Lâmpada">
