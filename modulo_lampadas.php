@@ -100,7 +100,6 @@
 
 			<div class="cabeçalho-modulo">
 				<h1>Módulo Lâmpada</h1>
-
 		        <a href="#" class="btn btn-info btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
 		          <span class="glyphicon glyphicon-plus"></span> Novo 
 		        </a>
@@ -109,14 +108,14 @@
 			<br>
 
             <?php foreach($lampadas_view as $l): ?>
-            	<form>
+            	<form method="GET">
             		<li class="list-group-item" id="config-button">
             		    <?php echo($l['descricao']); ?>
             		    <div class="material-switch pull-right" id="button-action">
             		        <input id="<?php echo($l['id']); ?>" name="lampada" value="lampada" type="checkbox" />
             		        <label for="<?php echo($l['id']); ?>" class="label-danger"></label>
 
-            		        <a href="models/modulo_lampada.edit.php?id=<?php echo($l['id']); ?>" name="editar">
+            		        <a href="modulo_lampadas_edit.php?id=<?php echo($l['id']); ?>">
             		        	<span class="glyphicon glyphicon-edit"></span>
             		        </a>
 
@@ -126,7 +125,7 @@
             		    </div>
             		</li>
             	</form>
-            <?php endforeach; ?>
+			<?php endforeach; ?>
 
 		</div>
 	    
@@ -157,13 +156,7 @@
 			</div>
 		</div>
 		<!-- Fim do Modal -->
-
-		<script>
-			function Animar() {
-				$('#texto').addClass('slideInLeft');
-		 	}
-		</script>
-
+	
 	</div>
 
 	<footer class="footer navbar navbar-default" id="footer-rodape">
@@ -190,6 +183,10 @@
     		jQuery("status").fadeOut();
 
     		jQuery("#preloader").delay(1000).fadeOut("slow");
-    	})
+		})
+		
+		function Animar() {
+			$('#texto').addClass('slideInLeft');
+		}
     </script>
 </html>
