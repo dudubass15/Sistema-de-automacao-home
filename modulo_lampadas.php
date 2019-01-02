@@ -108,11 +108,11 @@
 			<br>
 
             <?php foreach($lampadas_view as $l): ?>
-            	<form method="GET">
+            	<form method="POST">
             		<li class="list-group-item" id="config-button">
             		    <?php echo($l['descricao']); ?>
             		    <div class="material-switch pull-right" id="button-action">
-            		        <input id="<?php echo($l['id']); ?>" name="lampada" value="lampada" type="checkbox" />
+            		        <input id="<?php echo($l['id']); ?>" name="lampada[]" value="1" type="checkbox" />
             		        <label for="<?php echo($l['id']); ?>" class="label-danger"></label>
 
             		        <a href="modulo_lampadas_edit.php?id=<?php echo($l['id']); ?>">

@@ -64,13 +64,48 @@
 
 	<div class="container">
 		<div class="wrapper">
-			<div class="text"></div>
+			
+			<div class="text">
+				<div class="position-div-text">
+					<p class="texto-p">Frase/Identificação</p>
+				</div>
+			</div>
 			
 			<div class="button-acao">
-				<input type="checkbox" class="switch_1">
+				<div class="position-div-checkbox">
+					<input type="checkbox" class="switch_1" id="button" name="button" value="Ligado[1]" onclick="teste();">
+				</div>
 			</div>
+			
+		</div>
+
+		<div class="wrapper">
+			
+			<div class="text">
+				<div class="position-div-text">
+					<p class="texto-p">Frase/Identificação</p>
+				</div>
+			</div>
+			
+			<div class="button-acao">
+				<div class="position-div-checkbox">
+					<input type="checkbox" class="switch_1" id="button" name="button" value="Ligado[1]" onclick="teste();">
+				</div>
+			</div>
+			
 		</div>
 	</div>
+
+	<!-- <input type="checkbox" id="clicado" name="teste" value="1" onclick="teste();"> -->
+
+	<script>
+		function teste() {
+			var id = document.getElementById('button').value;
+
+			alert(id);
+			
+		}
+	</script>
 
 	<footer class="footer navbar navbar-default" id="footer-rodape">
 	    <div class="container">

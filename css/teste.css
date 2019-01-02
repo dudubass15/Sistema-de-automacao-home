@@ -3,7 +3,7 @@
 	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
-	margin: 30vh auto 0;
+	margin: 10vh auto 0;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
 	-webkit-transform: translateY(-50%);
@@ -30,16 +30,33 @@
 .text {
   width: 50%;
   height: 50px;
-  background-color: blue;
+}
+.text .position-div-text{
+  width: 80%;
+  height: 50px;
+  margin: auto;
+  background-color: #00AFFF;
+  border-radius: 6px;
+}
+.text .position-div-text .texto-p{
+  font-size: 24px;
+  font-family: 'Lobster', cursive;
+  padding-top: 6px;
+  text-align: center;
+  color: #19232b;
+  /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
 }
 .button-acao {
   width: 50%;
   height: 50px;
-  background-color: red;
+}
+.button-acao .position-div-checkbox{
+  width: 104.5px;
+  height: 50px;
+  margin: auto;
 }
 .button-acao .switch_1{
-  float: right;
-  margin-right: 30%;
+  /*margin-right: 30%;*/
 }
 
 /* Switch 1 Specific Styles Start */
