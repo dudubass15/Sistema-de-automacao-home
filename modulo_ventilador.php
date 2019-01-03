@@ -5,6 +5,8 @@
 	include 'models/modulo_lampada.view.php';
 
 	if(!in_array('lampada', $array_permissao_config)){
+		//header('Location: index.php');
+
 		echo
 			"<style>
 				#texto {
@@ -15,7 +17,8 @@
 					text-align: center;
 				}
 			</style>";
-	} else {
+		
+	} else{
 		echo
 		"<style>
 			#msg {
@@ -35,7 +38,7 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Automação Home - Modulo Lâmpadas</title>
+	<title>Automação Home - Modulo Ventilador</title>
 	<!-- CSS padrão/default -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/menu.css">
@@ -85,9 +88,7 @@
 	   	</div>
 
 	  </div>
-	</nav>
-	
-	<br>
+	</nav><br>
 
 	<div class="container">
 
@@ -98,7 +99,7 @@
 		<div class="corpo-teste animated" id="texto">
 
 			<div class="cabeçalho-modulo">
-				<h1>Módulo Lâmpada</h1>
+				<h1>Módulo Ventilador</h1>
 		        <a href="#" class="btn btn-info btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
 		          <span class="glyphicon glyphicon-plus"></span> Novo 
 		        </a>
@@ -111,7 +112,7 @@
             		<li class="list-group-item" id="config-button">
             		    <?php echo($l['descricao']); ?>
             		    <div class="material-switch pull-right" id="button-action">
-            		        <input id="<?php echo($l['id']); ?>" type="checkbox" onclick="alternarLamp(this.checked);"/>
+            		        <input id="<?php echo($l['id']); ?>" name="lampada[]" value="1" type="checkbox" />
             		        <label for="<?php echo($l['id']); ?>" class="label-danger"></label>
 
             		        <a href="modulo_lampadas_edit.php?id=<?php echo($l['id']); ?>">
@@ -175,9 +176,7 @@
 
     <script src="js/ajax_modal.js"></script>
 
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	
-	<script src="js/acionamento_lampada.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
     <script type="text/javascript">
     	jQuery(window).load(function() {

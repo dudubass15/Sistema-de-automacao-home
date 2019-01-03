@@ -73,9 +73,15 @@
 			
 			<div class="button-acao">
 				<div class="position-div-checkbox">
-					<input type="checkbox" class="switch_1" id="button" name="button" value="Ligado[1]" onclick="teste();">
+					<input type="checkbox" class="switch_1">
 				</div>
 			</div>
+
+			<!-- <div class="button-config-action">
+				<button type="button" class="btn btn-link">
+				<img src="icon/config.png" title="Home" width="30px" height="30px;">
+				</button>
+			</div> -->
 			
 		</div>
 
@@ -89,23 +95,34 @@
 			
 			<div class="button-acao">
 				<div class="position-div-checkbox">
-					<input type="checkbox" class="switch_1" id="button" name="button" value="Ligado[1]" onclick="teste();">
+					<form method="POST">
+						<input type="checkbox" class="switch_1" onclick="alternarLamp(this.checked);">
+					</form>
 				</div>
 			</div>
+
+			<!-- <div class="button-config-action">
+				<button type="button" class="btn btn-link">
+					<img src="icon/config.png" title="Home" width="30px" height="30px;">
+				</button>
+			</div> -->
 			
 		</div>
 	</div>
 
-	<!-- <input type="checkbox" id="clicado" name="teste" value="1" onclick="teste();"> -->
-
 	<script>
-		function teste() {
-			var id = document.getElementById('button').value;
-
-			alert(id);
-			
+		function alternarLamp(ligado) { 
+			if(ligado) {
+				// return desliga();
+				alert('Ligado');
+			} else {
+				alert('Desligado');
+			}
+			// return liga();
 		}
 	</script>
+
+	<!-- <input type="checkbox" id="clicado" name="teste" value="1" onclick="teste();"> -->
 
 	<footer class="footer navbar navbar-default" id="footer-rodape">
 	    <div class="container">

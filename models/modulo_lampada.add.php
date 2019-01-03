@@ -18,7 +18,7 @@ require '../configuracao/bd.php';
 
 		global $pdo;
 
-    	$sql = "INSERT INTO modulo_lampada (descricao) VALUES ('$descricao')";
+		$sql = "INSERT INTO modulo_lampada (descricao) VALUES ('$descricao')";
 		$sql = $pdo->query($sql);
 
 		header('Location: ../modulo_lampadas.php');
