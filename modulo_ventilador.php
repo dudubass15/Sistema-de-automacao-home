@@ -2,9 +2,9 @@
 
 	include 'models/horario.php';
 	include 'models/config.app.view.php';
-	include 'models/modulo_lampada.view.php';
+	include 'models/modulo_ventilador.view.php';
 
-	if(!in_array('lampada', $array_permissao_config)){
+	if(!in_array('ventilador', $array_permissao_config)){
 		//header('Location: index.php');
 
 		echo
@@ -107,19 +107,29 @@
 
 			<br>
 
-            <?php foreach($lampadas_view as $l): ?>
+			<?php 
+				if($ventilador_view == '0') {
+					echo '
+					<div class="alert alert-info" role="alert" >
+						<p><strong>Não existe nenhum aparelho cadastrado para acionar !</strong></p>
+					</div>
+					';
+				}
+			?>
+
+			<?php foreach($ventilador_view as $v): ?>
             	<form method="POST">
             		<li class="list-group-item" id="config-button">
-            		    <?php echo($l['descricao']); ?>
+            		    <?php echo($v['descricao']); ?>
             		    <div class="material-switch pull-right" id="button-action">
-            		        <input id="<?php echo($l['id']); ?>" name="lampada[]" value="1" type="checkbox" />
-            		        <label for="<?php echo($l['id']); ?>" class="label-danger"></label>
+            		        <input id="<?php echo($v['id']); ?>" type="checkbox" onclick="alternarLamp(this.checked);"/>
+            		        <label for="<?php echo($v['id']); ?>" class="label-danger"></label>
 
-            		        <a href="modulo_lampadas_edit.php?id=<?php echo($l['id']); ?>">
+            		        <a href="modulo_ventilador_edit.php?id=<?php echo($v['id']); ?>">
             		        	<span class="glyphicon glyphicon-edit"></span>
             		        </a>
 
-            		        <a href="models/modulo_lampada.del.php?id=<?php echo($l['id']); ?>">
+            		        <a href="models/modulo_ventilador.del.php?id=<?php echo($v['id']); ?>">
             		        	<span class="glyphicon glyphicon-trash"></span>
             		        </a>
             		    </div>
@@ -130,7 +140,7 @@
 		</div>
 	    
 
-		<!-- Modal para cadastro de nova lâmpada -->
+		<!-- Modal para cadastro de novo ventilador -->
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -139,7 +149,7 @@
 						<h4 class="modal-title" id="exampleModalLabel">Novo Cadastro</h4>
 					</div>
 					<div class="modal-body">
-						<form method="POST" action="models/modulo_lampada.add.php">
+						<form method="POST" action="models/modulo_ventilador.add.php">
 							<div class="form-group">
 								<label for="descricao" class="control-label">Descricao:</label>
 								<input type="text" class="form-control" id="descricao" name="descricao">
@@ -176,7 +186,9 @@
 
     <script src="js/ajax_modal.js"></script>
 
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	
+	<script src="js/acionamento_lampada.js"></script>
 
     <script type="text/javascript">
     	jQuery(window).load(function() {

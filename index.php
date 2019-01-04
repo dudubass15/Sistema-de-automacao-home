@@ -38,29 +38,30 @@
 <body id="pagina_retorno">
 
 	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	        </button>
-		    <a class="navbar-brand" href="#">
-		    	<img alt="Brand" src="bootstrap.png" style="width: 40px; margin-top: -10px;">
-		    </a>
-	    </div>
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<img alt="Brand" src="bootstrap.png" style="width: 40px; margin-top: -10px;">
+				</a>
+			</div>
 
-	    <div id="navbar" class="navbar-collapse collapse">
-	    	<ul class="nav navbar-nav navbar-right">
-            	<li>
-            		<p id="menu-hr"></p>
-        		</li>
-        	</ul>
-	   	</div>
-
-	  </div>
-	</nav><br>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<p id="menu-hr"></p>
+					</li>
+				</ul>
+			</div>
+	  	</div>
+	</nav>
+	
+	<br>
 
 	<div class="container">
 
@@ -116,7 +117,7 @@
 
 			<?php if(in_array('ventilador', $array_permissao_config)): ?>
 				<!-- Button GPS/Localização -->
-				<a href="javascript::" onclick="">
+				<a href="modulo_ventilador.php">
 					<div class="jumbotron" id="area-button">
 						<div class="button-painel">
 							<img src="icon/fan.png" title="Ventilador">
@@ -234,10 +235,10 @@
 			                        </style>
 		                        <?php endif ?>
 
-		                        	<div class="material-switch pull-right" id="opcao3">
-			                            <input id="someSwitchOptionDanger3" name="ventilador" value="ventilador" type="checkbox"/>
-			                            <label for="someSwitchOptionDanger3" class="label-danger"></label>
-			                        </div>
+								<div class="material-switch pull-right" id="opcao3">
+									<input id="someSwitchOptionDanger3" name="ventilador" value="ventilador" type="checkbox"/>
+									<label for="someSwitchOptionDanger3" class="label-danger"></label>
+								</div>
 		                    </li>
 
 					  		<li class="list-group-item" id="config-button">
@@ -255,10 +256,10 @@
 			                        </style>
 			                    <?php endif ?>
 
-			                    	<div class="material-switch pull-right" id="opcao4">
-			                    	    <input id="someSwitchOptionDanger4" name="musica" value="musica" type="checkbox"/>
-			                    	    <label for="someSwitchOptionDanger4" class="label-danger"></label>
-			                    	</div>
+								<div class="material-switch pull-right" id="opcao4">
+									<input id="someSwitchOptionDanger4" name="musica" value="musica" type="checkbox"/>
+									<label for="someSwitchOptionDanger4" class="label-danger"></label>
+								</div>
 		                    </li>
 
 		                    <li class="list-group-item" id="config-button">
@@ -276,10 +277,10 @@
 			                        </style>
 			                    <?php endif ?>
 
-			                    	<div class="material-switch pull-right" id="opcao5">
-			                    	    <input id="someSwitchOptionDanger5" name="video" value="video" type="checkbox"/>
-			                    	    <label for="someSwitchOptionDanger5" class="label-danger"></label>
-			                    	</div>
+								<div class="material-switch pull-right" id="opcao5">
+									<input id="someSwitchOptionDanger5" name="video" value="video" type="checkbox"/>
+									<label for="someSwitchOptionDanger5" class="label-danger"></label>
+								</div>
 		                    </li>
 
 		                    <li class="list-group-item" id="config-button">
@@ -297,11 +298,13 @@
 			                        </style>
 			                    <?php endif ?>
 
-			                    	<div class="material-switch pull-right" id="opcao6">
-			                            <input id="someSwitchOptionDanger6" name="assistente" value="assistente" type="checkbox"/>
-			                            <label for="someSwitchOptionDanger6" class="label-danger"></label>
-			                        </div>
-		                    </li><br>
+								<div class="material-switch pull-right" id="opcao6">
+									<input id="someSwitchOptionDanger6" name="assistente" value="assistente" type="checkbox"/>
+									<label for="someSwitchOptionDanger6" class="label-danger"></label>
+								</div>
+							</li>
+							
+							<br>
 
 		                    <div id="modal-form-button">
 		                    	<button type="submit" class="btn btn-default">Salvar</button>
@@ -312,7 +315,6 @@
 			    </div>
 			  </div>
 			</div>
-
 		</div>
 
 	</div>
@@ -336,7 +338,9 @@
 
     <script src="js/load_page.js"></script>
 
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	
+	<script src="js/acionamento_lampada.js"></script>
 
     <script type="text/javascript">
     	jQuery(window).load(function() {

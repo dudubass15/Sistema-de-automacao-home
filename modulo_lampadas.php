@@ -106,6 +106,16 @@
 
 			<br>
 
+			<?php 
+				if($lampadas_view == '0') {
+					echo '
+					<div class="alert alert-info" role="alert" >
+						<p><strong>Não existe nenhum aparelho cadastrado para acionar !</strong></p>
+					</div>
+					';
+				}
+			?>
+
             <?php foreach($lampadas_view as $l): ?>
             	<form method="POST">
             		<li class="list-group-item" id="config-button">
