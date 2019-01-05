@@ -3,8 +3,8 @@
 	// Pega os parâmetros para logar no banco de dados MySQL.
 
 	$dsn = "mysql:dbname=automacao;host=localhost";
-	$dbuser = "";
-	$dbpass = "";
+	$dbuser = "root";
+	$dbpass = "eduardo00";
 
 	try {
 		$pdo = new PDO($dsn, $dbuser, $dbpass);
