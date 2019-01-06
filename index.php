@@ -128,7 +128,7 @@
 
 			<?php if(in_array('computador', $array_permissao_config)): ?>
 				<!-- Button Reprodutor de Música -->
-				<a href="javascript::" onclick="">
+				<a href="modulo_computador.php">
 					<div class="jumbotron" id="area-button">
 						<div class="button-painel">
 							<img src="icon/desktop.png" title="Computador">
