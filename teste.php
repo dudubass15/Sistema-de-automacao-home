@@ -76,14 +76,10 @@
 					<input type="checkbox" class="switch_1">
 				</div>
 			</div>
-
-			<!-- <div class="button-config-action">
-				<button type="button" class="btn btn-link">
-				<img src="icon/config.png" title="Home" width="30px" height="30px;">
-				</button>
-			</div> -->
 			
 		</div>
+
+		<div id="resultado" style="width: 100%; height: 50px;"></div>
 
 		<div class="wrapper">
 			
@@ -96,16 +92,29 @@
 			<div class="button-acao">
 				<div class="position-div-checkbox">
 					<form method="POST">
-						<input type="checkbox" class="switch_1" onclick="alternarLamp(this.checked);">
+						<input type="checkbox" id="ts" class="switch_1" onclick="alternarTeste(this.checked);" name="checkboxTeste">
 					</form>
 				</div>
 			</div>
 
-			<!-- <div class="button-config-action">
-				<button type="button" class="btn btn-link">
-					<img src="icon/config.png" title="Home" width="30px" height="30px;">
-				</button>
-			</div> -->
+			<script>
+				function alternarTeste(ligado) { 
+				if(ligado) {
+					var cor = '#FFF400';
+					var conteudo = document.getElementById('resultado');
+
+					conteudo.style.backgroundColor = cor;
+
+				} else {
+					var cor = '';
+					var conteudo = document.getElementById('resultado');
+
+					conteudo.style.backgroundColor = cor;
+					//alert('Desligado');
+				}
+				// return liga();
+			}
+			</script>
 			
 		</div>
 	</div>

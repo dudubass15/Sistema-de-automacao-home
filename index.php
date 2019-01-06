@@ -126,12 +126,12 @@
 				</a>
 			<?php endif ?>
 
-			<?php if(in_array('musica', $array_permissao_config)): ?>
+			<?php if(in_array('computador', $array_permissao_config)): ?>
 				<!-- Button Reprodutor de Música -->
 				<a href="javascript::" onclick="">
 					<div class="jumbotron" id="area-button">
 						<div class="button-painel">
-							<img src="icon/music-player.png" title="Reprodutor de Música">
+							<img src="icon/desktop.png" title="Computador">
 						</div>
 					</div>
 				</a>
@@ -242,10 +242,10 @@
 		                    </li>
 
 					  		<li class="list-group-item" id="config-button">
-		                        Módulo Reprodutor de Música
-		                        <?php if(in_array('musica', $array_permissao_config)): ?>
+		                        Módulo Computador
+		                        <?php if(in_array('computador', $array_permissao_config)): ?>
 			                        <div class="material-switch pull-right">
-			                            <input id="someSwitchOptionDanger4" name="musica" value="musica" type="checkbox" checked />
+			                            <input id="someSwitchOptionDanger4" name="computador" value="computador" type="checkbox" checked />
 			                            <label for="someSwitchOptionDanger4" class="label-danger"></label>
 			                        </div>
 
@@ -257,7 +257,7 @@
 			                    <?php endif ?>
 
 								<div class="material-switch pull-right" id="opcao4">
-									<input id="someSwitchOptionDanger4" name="musica" value="musica" type="checkbox"/>
+									<input id="someSwitchOptionDanger4" name="computador" value="computador" type="checkbox"/>
 									<label for="someSwitchOptionDanger4" class="label-danger"></label>
 								</div>
 		                    </li>
