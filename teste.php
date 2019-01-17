@@ -97,33 +97,19 @@
 				</div>
 			</div>
 
-			<form action="" method="post">
-			GPIO 17&nbsp;<input type="submit" name="encender17" value="Encender">
-			<input type="submit" name="apagar17" value="Apagar">
-			<input type="submit" name="parpadear17" value="Parpadear">
-
-			<?php
-				if ($_POST[encender17]) { 
-					$a- exec("sudo python /var/www/leds/gpio/17/enciende.py");
-					echo $a;
-				}
-			?>
-
 			<script>
 				function alternarTeste(ligado) { 
 				if(ligado) {
-					$(function()
-					{
-						$.ajax({
-							url: "http:///media/eduardo/ARQUIVOS/Projetos/Python/Raspberry/acionamento_rele.py",
-							type: "post",
-							datatype: "html",
-							data: { var1: "foo", var2: "foo" },
-							success: function(response){
-									$("#ts").html(response);
-									console.log("OK"); 
-							}
-						});
+
+					$(document).ready(function(){
+						$("#ts").click(function(){
+						var hashcod = "TESTE1029898923123";
+							$.ajax({
+								url: "teste.php",
+								method: "GET",                 
+								data: hashcod;
+							});                
+						});            
 					});
 
 				} else {

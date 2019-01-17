@@ -1,7 +1,16 @@
 function alternarLamp(ligado) { 
     if(ligado) {
-        // return desliga();
-        alert('Ligado');
+        $(function()
+        {
+            $.ajax({
+                type: 'post',
+                url: 'acionamento_py.php',
+                data: { on: "ligado" },
+                success: function(){
+                    console.log("ok");
+                }
+            });
+        });
     } else {
         alert('Desligado');
     }

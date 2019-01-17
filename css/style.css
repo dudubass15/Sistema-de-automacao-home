@@ -510,7 +510,7 @@ body{
 	   	margin: auto;
 	   	margin-top: 2px;
    }
-   #footer-rodape .container p{
+   #footer-rodape .container .text-muted{
    		margin-top: 6px;
 	   	color: black;
 	   	text-align: center;
