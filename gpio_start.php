@@ -1,9 +1,7 @@
 <?php
 
-    $dado = system('gpio-g mode 11 out');
-    $dado.=system('gpio-g write 11 1');
-
-    exec($dado);
+    system('gpio-g mode 11 out');
+    system('gpio-g write 11 1');
 
     echo("Comando executado com sucesso !");
 
