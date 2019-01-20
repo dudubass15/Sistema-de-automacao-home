@@ -1,22 +1,32 @@
 <?php
 
-if(isset($_POST['on']) && !empty($_POST['on'])) {
-    $comando_on = $_POST['on'];
+include 'configuracao/ssh_config.php';
 
-    envio_comando($comando_on);
+    if(isset($_POST['on']) && !empty($_POST['on'])) {
+        $comando_on = $_POST['on'];
 
-} else{
-    header('Location: index.php');
-}
+        envio_comando_shh();
 
-    function envio_comando($comando_on) {
-        if($comando_on == 'ligado'){
-            $cmd = shell_exec('python acionamento_rele.py');
-            $cmd_escape = escapeshellcmd($cmd);
-            system($cmd_escape);
-        } else {
-            echo("Não foi possível enviar o comando ...");
-        }
+    } else{
+        header('Location: index.php');
+    }
+
+    function envio_comando_shh() {
+        // if($comando_on == 'ligado'){
+        //     $cmd = shell_exec('python acionamento_rele.py');
+        //     $cmd_escape = escapeshellcmd($cmd);
+        //     system($cmd_escape);
+        // } else {
+        //     echo("Não foi possível enviar o comando ...");
+        // }
+        
+        $ssh = new Net_SSH2('10.0.1.202');
+            if (!$ssh->login('pi', 'eduardo00')) {
+                exit('Login Failed');
+            }
+
+            echo $ssh->exec('pwd');
+            echo $ssh->exec('ls -la');
         
     }
 

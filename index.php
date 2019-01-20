@@ -107,14 +107,6 @@
 				</a>
 			<?php endif ?>
 
-			<!-- <button class="jumbotron" id="area-button" style="border: none;">
-				<div class="button-painel">
-					<a href="#" class="btn btn-primary btn-lg active">
-						<img src="icon/idea.png" title="Lâmpada">
-					</a>
-				</div>
-			</button> -->
-
 			<?php if(in_array('ventilador', $array_permissao_config)): ?>
 				<!-- Button GPS/Localização -->
 				<a href="modulo_ventilador.php">
